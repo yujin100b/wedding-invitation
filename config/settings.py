@@ -28,7 +28,7 @@ SECRET_KEY = env("DJANGO_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '54.180.81.21', '*.amazonaws.com', 'amazonaws.com', 'saeromsuh.jaeyongpark.net' ]
+ALLOWED_HOSTS = ['localhost', '54.180.81.21']
 
 
 # Application definition
@@ -61,6 +61,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:8080",
+    '*.amazonaws.com', 'amazonaws.com', 'saeromsuh.jaeyongpark.net' 
 ]
 
 ROOT_URLCONF = 'config.urls'
