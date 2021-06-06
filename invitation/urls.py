@@ -1,10 +1,18 @@
 from rest_framework import routers
-from .views import LetterViewSet, AttendanceViewSet, CheeringViewSet, FundingViewSet, SubscriberViewSet
+from django.urls import path
+from . import views
+
 
 router = routers.SimpleRouter()
-router.register(r'letter', LetterViewSet)
-router.register(r'attend', AttendanceViewSet)
-router.register(r'cheer', CheeringViewSet)
-router.register(r'funding', FundingViewSet)
-router.register(r'subscriber', SubscriberViewSet)
-urlpatterns = router.urls
+router.register(r'letter', views.LetterViewSet)
+router.register(r'attend', views.AttendanceViewSet)
+router.register(r'cheer', views.CheeringViewSet)
+router.register(r'funding', views.FundingViewSet)
+router.register(r'subscriber', views.SubscriberViewSet)
+
+urlpatterns = [
+    path('hit/', views.hit),
+    path('funfact/', views.funfact),
+]
+
+urlpatterns += router.urls
