@@ -57,13 +57,12 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ORIGIN_ALLOW_ALL = False
-CORS_ALLOW_CREDENTIALS = True
+CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = [
-    "http://localhost:8080",
-    "http://saeromsuh.jayongpark.s3-website.ap-northeast-2.amazonaws.com/",
-    'http://amazonaws.com', 
-    'http://saeromsuh.jaeyongpark.net' 
+    "localhost:8080",
+    "saeromsuh.jayongpark.s3-website.ap-northeast-2.amazonaws.com/",
+    '*.amazonaws.com', 
+    'saeromsuh.jaeyongpark.net' 
 ]
 
 ROOT_URLCONF = 'config.urls'
