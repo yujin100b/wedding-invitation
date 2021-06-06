@@ -89,7 +89,7 @@ def funfact(self):
     addr_list = max_amount.address.split(' ')
 
     if len(addr_list) > 1:
-        max_amount_addr = f"${addr_list[0]} {addr_list[1]}"
+        max_amount_addr = f"{addr_list[0]} {addr_list[1]}"
     elif len(addr_list) == 1:
         max_amount_addr = addr_list[0]
     else:
