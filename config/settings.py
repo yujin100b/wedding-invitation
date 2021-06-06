@@ -59,10 +59,9 @@ MIDDLEWARE = [
 
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = [
-    "localhost:8080",
-    "saeromsuh.jayongpark.s3-website.ap-northeast-2.amazonaws.com/",
-    '*.amazonaws.com', 
-    'saeromsuh.jaeyongpark.net' 
+    "http://localhost:8080",
+    'http://*.amazonaws.com', 
+    'http://saeromsuh.jaeyongpark.net' 
 ]
 
 ROOT_URLCONF = 'config.urls'
