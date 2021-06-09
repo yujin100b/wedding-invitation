@@ -7,13 +7,8 @@ from django.db.models.query_utils import Q
 from rest_framework import viewsets
 from rest_framework.response import Response
 from django.db.models import Max
-from .serializers import LetterSerializer, AttendanceSerializer, CheeringSerializer, FundingSerializer, SubscriberSerializer
-from .models import HitCount, Letter, Attendance, Cheering, Funding, Subscriber
-
-
-class LetterViewSet(viewsets.ModelViewSet):
-    queryset = Letter.objects.all()
-    serializer_class = LetterSerializer
+from .serializers import AttendanceSerializer, CheeringSerializer, FundingSerializer, SubscriberSerializer
+from .models import HitCount, Attendance, Cheering, Funding, Subscriber
 
 
 class AttendanceViewSet(viewsets.ModelViewSet):

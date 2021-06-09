@@ -1,11 +1,5 @@
 from rest_framework import serializers
-from .models import Letter, Attendance, Cheering, Funding, Subscriber
-
-
-class LetterSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Letter
-        fields = '__all__'
+from .models import Attendance, Cheering, Funding, Subscriber
 
 
 class AttendanceSerializer(serializers.ModelSerializer):
