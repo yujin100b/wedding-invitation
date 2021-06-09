@@ -26,11 +26,11 @@ class Cheering(models.Model):
 
 
 class Funding(models.Model):
-    name = models.CharField(_("축의금 보낸 이"), max_length=50)
-    amount = PositiveBigIntegerField(_("축의금 금액"))
+    name = models.CharField(_("축의금 보낸 이"), max_length=50, null=True, blank=True)
+    amount = PositiveBigIntegerField(_("축의금 금액"), null=True, blank=True)
     how_to_spend = models.CharField(_("축의금 어떻게 사용할까요?"), max_length=255, null=True, blank=True)
     address = models.CharField(_("답례품 받을 주소"), max_length=255, null=True, blank=True)
-    payment = models.CharField(_("입금 방법"), max_length=50)
+    payment = models.CharField(_("입금 방법"), max_length=50, null=True, blank=True)
     created_date = models.DateTimeField(_("생성일"), default=timezone.now)
 
 

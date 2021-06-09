@@ -11,6 +11,7 @@ router.register(r'subscriber', views.SubscriberViewSet)
 
 urlpatterns = [
     path('hit/', views.hit),
+    path('left_seat/', views.left_seat),
     path('funfact/', views.funfact),
 ]
 
