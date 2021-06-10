@@ -81,8 +81,8 @@ def funfact(request):
     online_attend_count = Attendance.objects.filter(method="online").count()
     not_attend_count = Attendance.objects.filter(email__isnull=False).count()
 
-    recently_fund_pk = Funding.objects.count()
-    recently_fund = Funding.objects.get(id=recently_fund_pk-1)
+    recently_fund_pk = Funding.objects.all().last()
+    recently_fund = Funding.objects.get(id=recently_fund_pk.id-1)
 
     all_name = Funding.objects.values('name').all()
     all_surname = [name['name'][0] for name in all_name]
