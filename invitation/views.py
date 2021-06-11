@@ -45,7 +45,6 @@ def hit(request):
     try:
         # ip주소와 게시글 번호로 기록을 조회함
         hits = HitCount.objects.get(ip=ip)
-        hits = HitCount.objects.create(ip=ip)
     except Exception as e:
         # 처음 게시글을 조회한 경우엔 조회 기록이 없음
         print(e)
@@ -57,7 +56,7 @@ def hit(request):
         # 날짜가 같은 경우
         else:
             print(str(ip) + ' has already hit this post.\n\n')
-    return Response('ok')
+    return JsonResponse({'r': 'ok'})
 
 
 def left_seat(reqest):
