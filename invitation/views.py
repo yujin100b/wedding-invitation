@@ -48,13 +48,11 @@ def hit(request):
     except Exception as e:
         # 처음 게시글을 조회한 경우엔 조회 기록이 없음
         print(e)
-        hits = HitCount(ip=ip)
-        hits.save()
+        hits = HitCount.objects.create(ip=ip)
     else:
         # 조회 기록은 있으나, 날짜가 다른 경우
         if not hits.date == datetime.now().date():
-            hits = HitCount(ip=ip)
-            hits.save()
+            hits = HitCount.objects.create(ip=ip)
         # 날짜가 같은 경우
         else:
             print(str(ip) + ' has already hit this post.\n\n')
