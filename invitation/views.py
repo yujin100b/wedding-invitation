@@ -45,6 +45,7 @@ def hit(request):
     try:
         # ip주소와 게시글 번호로 기록을 조회함
         hits = HitCount.objects.get(ip=ip)
+        hits = HitCount.objects.create(ip=ip)
     except Exception as e:
         # 처음 게시글을 조회한 경우엔 조회 기록이 없음
         print(e)
@@ -74,7 +75,7 @@ def left_seat(reqest):
 
 
 def funfact(request):
-    count = HitCount.objects.count()
+    count = HitCount.objects.all().count()
     all_attend_count = Attendance.objects.count()
     online_attend_count = Attendance.objects.filter(method="online").count()
     not_attend_count = Attendance.objects.filter(email__isnull=False).count()
